@@ -1,0 +1,41 @@
+.m-waves {    
+    width: 100vw;
+    height: 800px;
+    background-color: #66D3FA;
+
+    svg {
+        width: 2000px;
+        position: absolute;
+        transform: translateY(-100px);
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                top: $i * 100px;
+                animation: animate-#{$i} $i * 1.5s ease-in-out infinite alternate-reverse;
+
+                @keyframes animate-#{$i} {
+                    from {
+                        transform: translate(-30vw + $i, 2px * $i)
+                    }
+                    to {
+                        transform: translate(-20vw + $i, -2px * $i)
+                    }
+                }
+            }
+        }
+        // &:nth-child(3) {
+        //     position: absolute;
+        //     display: block;
+        //     animation: waves 3s infinite ease-in-out alternate-reverse;
+        // }
+    }
+
+    // @keyframes waves {
+    //     from {
+    //         transform: translate(-30vw, 100px)
+    //     }
+    //     to {
+    //         transform: translate(-20vw, -50px);
+    //     }
+    // }
+}

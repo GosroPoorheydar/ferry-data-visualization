@@ -1,0 +1,43 @@
+.m-ferry {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 200;
+    top: 0;
+
+    &__boat {
+        position: absolute;
+        display: block;
+        top: 20px;
+        width: 500px;
+        left: 50%;
+        transform: rotate(-50deg) translate(-20%, -100vh);
+        transition: transform 4s ease-in-out;
+    }
+
+    .show {
+        transform: rotate(0) translate(-50%, 0);
+    }
+
+    &__loader {
+        height: 20px;
+        transition: height 1s ease-in-out;
+    }
+
+    .down {
+        height: 100px;
+    }
+
+    .light {
+        animation: light 1s ease-in-out infinite;
+    }
+
+    @keyframes light {
+        from {
+            fill: red;
+        }
+        to {
+            fill: #D1D3D4;
+        }
+    }
+}
