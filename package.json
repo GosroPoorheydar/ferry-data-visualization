@@ -1,0 +1,27 @@
+{
+  "name": "ferry-data-visualization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "d3": "^6.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.29.0"
+  },
+  "scripts": {
+    "dev": "parcel static/index.html",
+    "build": "parcel build static/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BVictorB/ferry-data-visualization.git"
+  },
+  "author": "Victor Boucher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BVictorB/ferry-data-visualization/issues"
+  },
+  "homepage": "https://github.com/BVictorB/ferry-data-visualization#readme"
+}
