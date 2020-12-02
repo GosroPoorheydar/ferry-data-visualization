@@ -4,7 +4,7 @@
     background-color: #66D3FA;
 
     svg {
-        width: 2000px;
+        width: 200vw;
         position: absolute;
         transform: translateY(-100px);
 
@@ -23,19 +23,5 @@
                 }
             }
         }
-        // &:nth-child(3) {
-        //     position: absolute;
-        //     display: block;
-        //     animation: waves 3s infinite ease-in-out alternate-reverse;
-        // }
     }
-
-    // @keyframes waves {
-    //     from {
-    //         transform: translate(-30vw, 100px)
-    //     }
-    //     to {
-    //         transform: translate(-20vw, -50px);
-    //     }
-    // }
 }

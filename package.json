@@ -1,27 +1,39 @@
 {
-  "name": "ferry-data-visualization",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ferry",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "d3": "^6.2.0"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.29.0"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "dev": "parcel static/index.html",
-    "build": "parcel build static/index.html"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BVictorB/ferry-data-visualization.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "Victor Boucher",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BVictorB/ferry-data-visualization/issues"
-  },
-  "homepage": "https://github.com/BVictorB/ferry-data-visualization#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

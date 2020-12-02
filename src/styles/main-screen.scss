@@ -24,7 +24,22 @@
 @import './modules/m-ferry.scss';
 @import './modules/m-platform.scss';
 @import './modules/m-nav.scss';
+@import './modules/m-overlay.scss';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Pages                                   */
 /* -------------------------------------------------------------------------- */
+
+body {
+    overflow: hidden;
+}
+
+.st0{fill:#1C75BC;}
+.st1{fill:#F1F2F2;}
+.st2{fill:#231F20;}
+.st3{fill:#FFFFFF;}
+.st4{fill:#2B3990;}
+.st5{fill:#D1D3D4;}
+.st6{fill:#FBB040;}
+.st7{fill:#231F20;stroke:#F1F2F2;stroke-width:3;stroke-miterlimit:10;}
+.st8{fill:#231F20;stroke:#D1D3D4;stroke-width:4;stroke-miterlimit:10;}

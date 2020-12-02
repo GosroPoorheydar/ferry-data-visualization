@@ -1,0 +1,62 @@
+.m-ferry {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: -1250px;
+
+    &__boat {
+        position: absolute;
+        width: 300px;
+        height: 3000px;
+        left: 50%;
+        transform: rotate(-50deg) translate(-20%, -200vh);
+        transition: transform 4s ease-in-out 1s;
+
+        &--active {
+            transform: rotate(0) translate(-50%, 0);
+            transition: transform 4s ease-in-out 0s;
+        }
+    }
+
+    &__loader {
+        height: 20px;
+        transition: height 1s ease-in-out 0s;
+
+        &--active {
+            height: 100px;
+            transition: height 1s ease-in-out 4s;
+        }
+    }
+
+    &__light {
+        fill: #D1D3D4;
+
+        &--active {
+            animation: light 1s ease-in-out infinite 4s;
+        }
+
+        @keyframes light {
+            from {
+                fill: red;
+            }
+            to {
+                fill: #D1D3D4;
+            }
+        }
+    }
+
+    &__data {
+        transform: translate(-100px, 0);
+
+        image {
+            transition: transform 1s ease-in-out;
+            transform: translate(0);
+            // @for $i from 1 through 99 {
+            //     &:nth-child(#{$i}) {
+            //         transform: translate($i * 50px, 300px);
+            //         transition-delay: .1s * $i
+            //     }
+            // }
+        }
+    }
+}
