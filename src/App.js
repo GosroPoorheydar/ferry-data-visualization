@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import Ferry from "./components/Ferry"
-import Navigation from "./components/Navigation"
-import Overlay from "./components/Overlay"
-import Platform from "./components/Platform"
-import Sidebar from './components/Sidebar'
+import Ferry from './components/Ferry'
+import Info from './components/Info'
+import Overlay from './components/Overlay'
+import Platform from './components/Platform'
 import Waves from './components/Waves'
 
 const App = () => {
@@ -12,11 +11,10 @@ const App = () => {
   return (
     <>
       <Overlay />
-      <Navigation setShowFerry={setShowFerry} />
       <Waves />
       <Platform />
       <Ferry showFerry={showFerry} />
-      {/* <Sidebar /> */}
+      <Info setShowFerry={setShowFerry}/>
     </>
   )
 }

@@ -1,0 +1,96 @@
+.m-info {
+  top: 600px;
+  width: 1000px;
+  height: 1000px;
+  // background-color: rgba(255, 105, 180, 0.119);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  color: white;
+
+  &__column {
+    margin-top: 100px;
+    width: 330px;
+    height: 100%;
+    // background-color: rgba(0, 128, 0, 0.139);
+
+    &:nth-of-type(2) {
+      width: 300px;
+      margin-left: auto;
+      margin-right: 50px;
+    }
+  }
+
+  &__grid {
+    margin-left: 85px;
+    margin-top: 41px;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    column-gap: 40px;
+
+    img {
+      height: 35px;
+    }
+
+    &__cyclist-mask {
+      grid-template-rows: repeat(7, minmax(0, 1fr));
+      height: 280px;
+    }
+
+    &__cyclist {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      height: 80px;
+    }
+
+    &__pedestrian-mask {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      height: 80px;
+    }
+
+    &__pedestrian {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      height: 80px;
+    }
+
+    &__scooter-mask {
+      grid-template-rows: repeat(1, minmax(0, 1fr));
+      height: 45px;
+    }
+  }
+
+  button {
+    background-color: #F6862A;
+    box-shadow: 0 4px #F2632A;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 32px;
+    margin: 5px;
+
+    &:focus, &:hover {
+      background-color: #F2632A;
+      box-shadow: 0 2px #F6862A;
+      outline: none;
+    }
+  }
+
+  .time-button {
+    width: 90px;
+    padding: 15px 0px;
+    margin: 10px 5px 0;
+    background-color: #D1D3D4;
+    box-shadow: 0 4px #A7A9AC;
+    color: black;
+
+    &:focus, &:hover {
+      background-color: #A7A9AC;
+      box-shadow: 0 2px #D1D3D4;
+      outline: none;
+    }
+  }
+}

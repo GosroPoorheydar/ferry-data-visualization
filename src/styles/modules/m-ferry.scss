@@ -4,6 +4,16 @@
     position: absolute;
     top: -1230px;
 
+    .st0{fill:#1C75BC;}
+    .st1{fill:#F1F2F2;}
+    .st2{fill:#231F20;}
+    .st3{fill:#FFFFFF;}
+    .st4{fill:#2B3990;}
+    .st5{fill:#D1D3D4;}
+    .st6{fill:#FBB040;}
+    .st7{fill:#231F20;stroke:#F1F2F2;stroke-width:3;stroke-miterlimit:10;}
+    .st8{fill:#231F20;stroke:#D1D3D4;stroke-width:4;stroke-miterlimit:10;}
+
     &__boat {
         position: absolute;
         width: 1000px;
@@ -42,94 +52,6 @@
             to {
                 fill: #D1D3D4;
             }
-        }
-    }
-
-    &__data {
-        transform: translate(200px, 600px);
-        .cyclist-mask {
-            .cls-1{fill:black;}.cls-2{fill:#3fffec;}
-
-            g {
-                @for $i from 1 through 7 {
-                    &:nth-child(#{$i}) {
-                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
-        
-                        @keyframes animate-#{$i} {
-                            from {
-                                transform: translate(0, 0)
-                            }
-                            to {
-                                transform: translate(-21px + -60px * $i, 120px)
-                            }
-                        }
-                    }
-                }
-
-                @for $i from 8 through 14 {
-                    &:nth-child(#{$i}) {
-                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
-        
-                        @keyframes animate-#{$i} {
-                            from {
-                                transform: translate(0, 0)
-                            }
-                            to {
-                                transform: translate(400px + -60px * $i, 180px)
-                            }
-                        }
-                    }
-                }
-
-                @for $i from 15 through 21 {
-                    &:nth-child(#{$i}) {
-                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
-        
-                        @keyframes animate-#{$i} {
-                            from {
-                                transform: translate(0, 0)
-                            }
-                            to {
-                                transform: translate(821px + -60px * $i, 240px)
-                            }
-                        }
-                    }
-                }
-
-                @for $i from 22 through 28 {
-                    &:nth-child(#{$i}) {
-                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
-        
-                        @keyframes animate-#{$i} {
-                            from {
-                                transform: translate(0, 0)
-                            }
-                            to {
-                                transform: translate(1242px + -60px * $i, 300px)
-                            }
-                        }
-                    }
-                }
-
-                @for $i from 29 through 35 {
-                    &:nth-child(#{$i}) {
-                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
-        
-                        @keyframes animate-#{$i} {
-                            from {
-                                transform: translate(0, 0)
-                            }
-                            to {
-                                transform: translate(1663px + -60px * $i, 360px)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .cyclist-no-mask {
-            .cls-1{fill: black;}
         }
     }
 }

@@ -1,5 +1,3 @@
-import FerryData from './FerryData'
-
 const Ferry = ({ showFerry }) => {
     return (
         <div className="m-ferry">
@@ -17,9 +15,6 @@ const Ferry = ({ showFerry }) => {
                         <rect x="132.57" y="34.29" className="st4" width="311.45" height="11.07"/>
                         <rect x="132.57" y="30.37" className="st6" width="311.45" height="7.84"/>
                     </g>
-                </g>
-                <g className="m-ferry__data">
-                    <FerryData />
                 </g>
                 <g>
                     <path className="st3" d="M396.69,142.1c0,0-33.22,0-78.08,0c-21.75,0-46.21,0-70.98,0c-44.86,0-78.08,0-78.08,0l-47.32,33.29v407.4
