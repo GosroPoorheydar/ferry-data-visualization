@@ -1,7 +1,12 @@
 const Waves = () => {
   return (
-    <div>
+    <div className="m-waves">
+     <div className="container">
 
+      <div className="sliding-background"></div>
+      <div className="sliding-background-2"></div>
+
+    </div>
     </div>
   )
 }

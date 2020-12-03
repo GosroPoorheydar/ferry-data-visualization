@@ -3,17 +3,21 @@ import Ferry from "./components/Ferry"
 import Navigation from "./components/Navigation"
 import Overlay from "./components/Overlay"
 import Platform from "./components/Platform"
+import Sidebar from './components/Sidebar'
+import Waves from './components/Waves'
 
 const App = () => {
-  const [showFerry, setShowFerry] = useState(false)
+  const [showFerry, setShowFerry] = useState(true)
 
   return (
-    <div className="App">
+    <>
       <Overlay />
       <Navigation setShowFerry={setShowFerry} />
-      <Ferry showFerry={showFerry} />
+      <Waves />
       <Platform />
-    </div>
+      <Ferry showFerry={showFerry} />
+      {/* <Sidebar /> */}
+    </>
   )
 }
 

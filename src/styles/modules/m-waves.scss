@@ -1,27 +1,59 @@
 .m-waves {    
+    position: absolute;
+    top: 0;
     width: 100vw;
-    height: 800px;
-    background-color: #66D3FA;
+    height: 600px;
+    background-color: #276c9d;
 
-    svg {
-        width: 200vw;
+    .container {
+        overflow: hidden;
+        height: 100%;
+      }
+      
+      .sliding-background {
+        background: url('../../img/waves-dark.png') repeat-x;
+        height: 100%;
+        width: 5076px;
+        animation: slide 60s linear infinite;
+      }
+
+      .sliding-background-2 {
         position: absolute;
-        transform: translateY(-100px);
-
-        @for $i from 1 through 6 {
-            &:nth-child(#{$i}) {
-                top: $i * 100px;
-                animation: animate-#{$i} $i * 1.5s ease-in-out infinite alternate-reverse;
-
-                @keyframes animate-#{$i} {
-                    from {
-                        transform: translate(-30vw + $i, 2px * $i)
-                    }
-                    to {
-                        transform: translate(-20vw + $i, -2px * $i)
-                    }
-                }
-            }
+        top: 0;
+        background: url('../../img/waves-light.png') repeat-x;
+        height: 100%;
+        width: 5076px;
+        animation: slide 30s linear infinite;
+      }
+      
+      @keyframes slide{
+        0%{
+          transform: translate3d(0, 0, 0);
         }
-    }
+        100%{
+          transform: translate3d(-1692px, 0, 0);
+        }
+      }
+
+    // svg {
+    //     width: 200vw;
+    //     position: absolute;
+    //     transform: translateY(-100px);
+
+    //     @for $i from 1 through 6 {
+    //         &:nth-child(#{$i}) {
+    //             top: $i * 100px;
+    //             animation: animate-#{$i} $i * 1.5s ease-in-out infinite alternate-reverse;
+
+    //             @keyframes animate-#{$i} {
+    //                 from {
+    //                     transform: translate(-30vw + $i, 2px * $i)
+    //                 }
+    //                 to {
+    //                     transform: translate(-20vw + $i, -2px * $i)
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }

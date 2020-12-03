@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Overlay = () => {
-    const [showOverlay, setShowOverlay] = useState(true)
+    const [showOverlay, setShowOverlay] = useState(false)
 
     return (
         <div className={showOverlay ? "m-overlay" : "m-overlay m-overlay--hide"}>
