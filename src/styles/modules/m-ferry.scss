@@ -2,7 +2,7 @@
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    top: -1250px;
+    top: -1230px;
 
     &__boat {
         position: absolute;
@@ -47,47 +47,89 @@
 
     &__data {
         transform: translate(200px, 600px);
-        g {
-            @for $i from 1 through 6 {
-                &:nth-child(#{$i}) {
-                    animation: animate-#{$i} $i * 1.5s ease-in-out forwards;
-    
-                    @keyframes animate-#{$i} {
-                        from {
-                            transform: translate(0, 0)
-                        }
-                        to {
-                            transform: translate(-70px * $i, 500px)
+        .cyclist-mask {
+            .cls-1{fill:black;}.cls-2{fill:#3fffec;}
+
+            g {
+                @for $i from 1 through 7 {
+                    &:nth-child(#{$i}) {
+                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
+        
+                        @keyframes animate-#{$i} {
+                            from {
+                                transform: translate(0, 0)
+                            }
+                            to {
+                                transform: translate(-21px + -60px * $i, 120px)
+                            }
                         }
                     }
                 }
-            }
-            @for $i from 7 through 12 {
-                &:nth-child(#{$i}) {
-                    animation: animate-#{$i} $i * 1.5s ease-in-out forwards;
-    
-                    @keyframes animate-#{$i} {
-                        from {
-                            transform: translate(0, 0)
+
+                @for $i from 8 through 14 {
+                    &:nth-child(#{$i}) {
+                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
+        
+                        @keyframes animate-#{$i} {
+                            from {
+                                transform: translate(0, 0)
+                            }
+                            to {
+                                transform: translate(400px + -60px * $i, 180px)
+                            }
                         }
-                        to {
-                            transform: translate(-70px * $i, 550px)
+                    }
+                }
+
+                @for $i from 15 through 21 {
+                    &:nth-child(#{$i}) {
+                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
+        
+                        @keyframes animate-#{$i} {
+                            from {
+                                transform: translate(0, 0)
+                            }
+                            to {
+                                transform: translate(821px + -60px * $i, 240px)
+                            }
+                        }
+                    }
+                }
+
+                @for $i from 22 through 28 {
+                    &:nth-child(#{$i}) {
+                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
+        
+                        @keyframes animate-#{$i} {
+                            from {
+                                transform: translate(0, 0)
+                            }
+                            to {
+                                transform: translate(1242px + -60px * $i, 300px)
+                            }
+                        }
+                    }
+                }
+
+                @for $i from 29 through 35 {
+                    &:nth-child(#{$i}) {
+                        animation: animate-#{$i} $i * .1s ease-in-out forwards;
+        
+                        @keyframes animate-#{$i} {
+                            from {
+                                transform: translate(0, 0)
+                            }
+                            to {
+                                transform: translate(1663px + -60px * $i, 360px)
+                            }
                         }
                     }
                 }
             }
         }
-        // transform: translate(-100px, 0);
 
-        // image {
-        //     transition: transform 1s ease-in-out;
-        //     transform: translate(0);
-        //     // @for $i from 1 through 99 {
-        //     //     &:nth-child(#{$i}) {
-        //     //         transform: translate($i * 50px, 300px);
-        //     //         transition-delay: .1s * $i
-        //     //     }
-        //     // }
-        // }
+        .cyclist-no-mask {
+            .cls-1{fill: black;}
+        }
     }
 }

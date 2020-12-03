@@ -1,70 +1,6 @@
+import FerryData from './FerryData'
+
 const Ferry = ({ showFerry }) => {
-    const dataNew = [
-        {
-            type: 'cyclist',
-            age: 20
-        },
-        {
-            type: 'pedestrian',
-            age: 25
-        },
-        {
-            type: 'cyclist',
-            age: 30
-        },
-        {
-            type: 'pedestrian',
-            age: 35
-        },
-        {
-            type: 'pedestrian',
-            age: 40
-        },
-        {
-            type: 'pedestrian',
-            age: 45
-        }
-    ]
-
-    const dataNumber = {
-        pedestrians: 30,
-        cyclists: 10
-    }
-
-    const createPedestrians = () => {
-        const allPedestrians = []
-        for (let i = 0; i < dataNumber.pedestrians; i++) {
-            allPedestrians.push(
-                <g>
-                    <path class="st0" d="M21.95,54.74c-0.05,0.22,0.12,0.43,0.35,0.43h3.36c0.33,0,0.62-0.23,0.69-0.56l2.99-13.99l0.03-0.27h0.02
-                        l0.01-0.04l3.05,14.47c0.05,0.23,0.25,0.39,0.48,0.39h3.62c0.18,0,0.32-0.17,0.29-0.35l-2.55-13.69c-0.14-0.67-0.42-2.36-0.38-3.04
-                        l0.68-14.76c0.01-0.13,0.2-0.14,0.22-0.01l2.65,10.33c0.12,0.69,0.44,1.78,1.14,1.78h0.63c1.58-0.01,1.15-1,0.76-2.54L35.93,15.9
-                        c-0.1-0.38-1.26-0.89-1.65-0.89h-4.82h-0.13h-5.58c-0.47,0-0.77,0.81-0.89,1.27l-4.06,16.61c-0.38,1.48-0.13,2.97,1.4,2.98h0
-                        c0.95,0.01,1.11-0.9,1.27-1.84l2.48-10.7c0.02-0.13,0.21-0.12,0.22,0.01l0.28,15.45L21.95,54.74z"/>
-                    <ellipse class="st0" cx="29.46" cy="11.89" rx="4.12" ry="4.82"/>
-                </g>
-            )
-        }
-        return allPedestrians
-    }
-
-    const createCyclists = () => {
-        const allPedestrians = []
-        for (let i = 0; i < dataNumber.pedestrians; i++) {
-            allPedestrians.push(
-                <g>
-                    <path class="st0" d="M21.95,54.74c-0.05,0.22,0.12,0.43,0.35,0.43h3.36c0.33,0,0.62-0.23,0.69-0.56l2.99-13.99l0.03-0.27h0.02
-                        l0.01-0.04l3.05,14.47c0.05,0.23,0.25,0.39,0.48,0.39h3.62c0.18,0,0.32-0.17,0.29-0.35l-2.55-13.69c-0.14-0.67-0.42-2.36-0.38-3.04
-                        l0.68-14.76c0.01-0.13,0.2-0.14,0.22-0.01l2.65,10.33c0.12,0.69,0.44,1.78,1.14,1.78h0.63c1.58-0.01,1.15-1,0.76-2.54L35.93,15.9
-                        c-0.1-0.38-1.26-0.89-1.65-0.89h-4.82h-0.13h-5.58c-0.47,0-0.77,0.81-0.89,1.27l-4.06,16.61c-0.38,1.48-0.13,2.97,1.4,2.98h0
-                        c0.95,0.01,1.11-0.9,1.27-1.84l2.48-10.7c0.02-0.13,0.21-0.12,0.22,0.01l0.28,15.45L21.95,54.74z"/>
-                    <ellipse class="st0" cx="29.46" cy="11.89" rx="4.12" ry="4.82"/>
-                </g>
-            )
-        }
-        return allPedestrians
-    }
-
     return (
         <div className="m-ferry">
             <svg className={showFerry ? "m-ferry__boat m-ferry__boat--active" : "m-ferry__boat"} viewBox="-450 -450 1500 1500">
@@ -83,7 +19,7 @@ const Ferry = ({ showFerry }) => {
                     </g>
                 </g>
                 <g className="m-ferry__data">
-                    {createPedestrians()}
+                    <FerryData />
                 </g>
                 <g>
                     <path className="st3" d="M396.69,142.1c0,0-33.22,0-78.08,0c-21.75,0-46.21,0-70.98,0c-44.86,0-78.08,0-78.08,0l-47.32,33.29v407.4
