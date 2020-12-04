@@ -13,6 +13,7 @@
     &__dark {
       background: url('../../img/waves-dark.png') repeat-x;
       background-size: 450px 1350px;
+      background-position: -100px;
       height: 100%;
       width: 5076px;
       animation: slide 90s linear infinite;
@@ -23,6 +24,7 @@
       top: 0;
       background: url('../../img/waves-light.png') repeat-x;
       background-size: 450px 1350px;
+      background-position: -100px;
       height: 100%;
       width: 5076px;
       animation: slide 45s linear infinite;

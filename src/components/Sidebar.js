@@ -5,10 +5,12 @@ import pedestrianMask from '../img/pedestrian-mask.png'
 import pedestrian from '../img/pedestrian.png'
 import scooterMask from '../img/scooter-mask.png'
 import scooter from '../img/scooter.png'
+import cyclistIcon from '../img/cyclist-icon.png'
+import pedestrianIcon from '../img/pedestrian-icon.png'
+import scooterIcon from '../img/scooter-icon.png'
 
-const Info = ({ setShowFerry }) => {
+const Sidebar = ({ selectedFerry, setSelectedFerry, setSelectedTime }) => {
   const [selectedData, setSelectedData] = useState(null)
-  const [selectedFerry, setSelectedFerry] = useState(null)
 
   const data = {
     ndsm: {
@@ -117,6 +119,7 @@ const Info = ({ setShowFerry }) => {
     const time = Number(e.target.value)
     const selectedData = ferry === 'buiksloter' ? data.buiksloter[time] : data.ndsm[time]
     setSelectedData(selectedData)
+    setSelectedTime(e.target.value.replace(/(..)/g, '$1:').slice(0,-1))
   }
 
   const createBuiksloterButtons = () => {
@@ -144,13 +147,13 @@ const Info = ({ setShowFerry }) => {
   const displayTimeButtons = () => {
     if (selectedFerry === 'ndsm') {
       return (
-        <div class="m-info__ndsm-buttons">
+        <div className="m-sidebar__ndsm-buttons">
           {createNdsmButtons()}
         </div>
       )
     } else if (selectedFerry === 'buiksloter') {
       return (
-        <div class="m-info__buiksloter-buttons">
+        <div className="m-sidebar__buiksloter-buttons">
           {createBuiksloterButtons()}
         </div>
       )
@@ -161,43 +164,73 @@ const Info = ({ setShowFerry }) => {
     if (selectedData) {
     return (
       <>
-        <div className="m-info__grid m-info__grid__cyclist-mask">
+        <div className="m-sidebar__grid m-sidebar__grid__cyclist-mask">
           {[...Array(selectedData.cyclistsMask)].map((v, i) => (<img key={i} src={cyclistMask} alt=""/>))}
         </div>
-        <div className="m-info__grid m-info__grid__cyclist">
+        <div className="m-sidebar__grid m-sidebar__grid__cyclist">
           {[...Array(selectedData.cyclistsNoMask)].map((v, i) => (<img key={i} src={cyclist} alt=""/>))}
         </div>
-        <div className="m-info__grid m-info__grid__pedestrian-mask">
+        <div className="m-sidebar__grid m-sidebar__grid__pedestrian-mask">
           {[...Array(selectedData.pedestriansMask)].map((v, i) => (<img key={i} src={pedestrianMask} alt=""/>))}
         </div>
-        <div className="m-info__grid m-info__grid__pedestrian">
+        <div className="m-sidebar__grid m-sidebar__grid__pedestrian">
           {[...Array(selectedData.pedestriansNoMask)].map((v, i) => (<img key={i} src={pedestrian} alt=""/>))}
         </div>
-        <div className="m-info__grid m-info__grid__scooter-mask">
+        <div className="m-sidebar__grid m-sidebar__grid__scooter-mask">
           {[...Array(selectedData.scootersMask)].map((v, i) => (<img key={i} src={scooterMask} alt=""/>))}
         </div>
-        <div className="m-info__grid m-info__grid__scooter">
+        <div className="m-sidebar__grid m-sidebar__grid__scooter">
           {[...Array(selectedData.scootersNoMask)].map((v, i) => (<img key={i} src={scooter} alt=""/>))}
         </div>
       </>
     )
   }}
 
+  const sumValues = obj => Object.values(obj).reduce((a, b) => a + b)
+
+  const displaySelectedDataInfo = () => {
+    if (selectedData) {
+    return (
+      <>
+        <div className="m-sidebar__comparison">
+          <div>
+            <img src={cyclistIcon} alt=""/>
+            <img src={pedestrianIcon} alt=""/>
+            <img src={scooterIcon} alt=""/>
+          </div>
+          <div>
+            <h2>With mask:</h2>
+            <h3>{selectedData.cyclistsMask}</h3>
+            <h3>{selectedData.pedestriansMask}</h3>
+            <h3>{selectedData.scootersMask}</h3>
+          </div>
+          <div>
+            <h2>Without mask:</h2>
+            <h3>{selectedData.cyclistsNoMask}</h3>
+            <h3>{selectedData.pedestriansNoMask}</h3>
+            <h3>{selectedData.scootersNoMask}</h3>
+          </div>
+        </div>
+        <h3>Total amount of passengers: {sumValues(selectedData)}</h3>
+      </>
+    )
+  }}
+
   return (
-      <div className="m-info">
-          <div className="m-info__column">
+      <div className="m-sidebar">
+          <div className="m-sidebar__column">
             {checkIfDataIsSelected()}
           </div>
-          <div className="m-info__column">
-            <h1>De pont op het Centraal Station  van Amsterdam</h1>
-            <h2>Intro: Voor de opdracht van de data week hebben we een website gebouwd. </h2>
-            <button onClick={() => setShowFerry(prevState => !prevState)} className="go-ferry">LAAT HEM VAREN</button>
-            <button onClick={() => setSelectedFerry('ndsm')}>NDSM</button>
-            <button onClick={() => setSelectedFerry('buiksloter')}>Buiksloterweg</button>
+          <div className="m-sidebar__column">
+            <h1>Ferry information</h1>
+            <h3>Select a ferry and a time to get more information</h3>
+            <button onClick={() => setSelectedFerry('ndsm')} className={selectedFerry === 'ndsm' ? 'active-button' : ''}>NDSM</button>
+            <button onClick={() => setSelectedFerry('buiksloter')} className={selectedFerry === 'buiksloter' ? 'active-button' : ''}>Buiksloterweg</button>
             {displayTimeButtons()}
+            {displaySelectedDataInfo()}
           </div>
       </div>
   )
 }
 
-export default Info
+export default Sidebar

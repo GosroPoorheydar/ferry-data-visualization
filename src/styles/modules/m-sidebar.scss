@@ -1,19 +1,18 @@
-.m-info {
+.m-sidebar {
   top: 600px;
   width: 1000px;
   height: 1000px;
-  // background-color: rgba(255, 105, 180, 0.119);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   color: white;
+  font-family: 'Quicksand', sans-serif;
 
   &__column {
-    margin-top: 100px;
+    margin-top: 55px;
     width: 330px;
     height: 100%;
-    // background-color: rgba(0, 128, 0, 0.139);
 
     &:nth-of-type(2) {
       width: 300px;
@@ -28,6 +27,7 @@
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     column-gap: 40px;
+    row-gap: 5px;
 
     img {
       height: 35px;
@@ -39,21 +39,31 @@
     }
 
     &__cyclist {
+      margin-top: 46px;
       grid-template-rows: repeat(2, minmax(0, 1fr));
       height: 80px;
     }
 
     &__pedestrian-mask {
+      margin-top: 43px;
       grid-template-rows: repeat(2, minmax(0, 1fr));
       height: 80px;
     }
 
     &__pedestrian {
+      margin-top: 43px;
       grid-template-rows: repeat(2, minmax(0, 1fr));
       height: 80px;
     }
 
     &__scooter-mask {
+      margin-top: 43px;
+      grid-template-rows: repeat(1, minmax(0, 1fr));
+      height: 45px;
+    }
+
+    &__scooter {
+      margin-top: 36px;
       grid-template-rows: repeat(1, minmax(0, 1fr));
       height: 45px;
     }
@@ -79,6 +89,12 @@
     }
   }
 
+  .active-button {
+    background-color: #F2632A;
+    box-shadow: 0 2px #F6862A;
+    outline: none;
+  }
+
   .time-button {
     width: 90px;
     padding: 15px 0px;
@@ -91,6 +107,31 @@
       background-color: #A7A9AC;
       box-shadow: 0 2px #D1D3D4;
       outline: none;
+    }
+  }
+
+  &__comparison {
+    display: flex;
+    margin-top: 30px;
+
+    div {
+      width: 33%;
+
+
+      &:nth-of-type(1) {
+        margin-top: 70px;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin: 20px 0 45px;
+      }
+    }
+
+    img {
+      display: block;
+      width: 50px;
+      margin: 20px auto 20px 0;
     }
   }
 }
