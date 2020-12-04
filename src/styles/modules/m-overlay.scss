@@ -5,17 +5,63 @@
     width: 100vw;
     height: 100vh;
     z-index: 999;
-    background-color: #0071bc;
+    background-color: #36A9E1;
     color: white;
     padding: 20px;
     transition: top 500ms ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+
+    h1 {
+        font-size: 100px;
+        margin: 20px 0;
+
+        @media (max-width: 1000px){
+            font-size: 50px;
+        }
+    }
+
+    h2 {
+        margin-bottom: 60px;
+    }
 
     &__container {
-        max-width: 700px;
+        max-width: 1440px;
         margin: 0 auto;
     }
 
     &--hide {
         top: -100vh;
+    }
+
+    img {
+        width: 80%;
+    }
+
+    p {
+        margin-top: 40px;
+        font-size: 20px;
+        font-weight: semi-bold;
+    }
+
+    button {
+        background-color: #F6862A;
+        box-shadow: 0 4px #F2632A;
+        border-radius: 30px;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        font-weight: semi-bold;
+        padding: 15px 32px;
+        margin-top: 20px;
+    
+        &:focus, &:hover {
+          background-color: #F2632A;
+          box-shadow: 0 2px #F6862A;
+          outline: none;
+        }
     }
 }
